@@ -1,5 +1,5 @@
 #include "credit_calc.h"
-
+//Расчет аннуитетного ежемесячного платежа 
 long double monthly_payment_annuity(long double credit_sum, double term,
                                     long double tax_rate) {
   long double month_tax_rate_dec = tax_rate / 12 / 100;
@@ -8,7 +8,7 @@ long double monthly_payment_annuity(long double credit_sum, double term,
       (powl(1 + month_tax_rate_dec, term) - 1);
   return monthly_payment_ann;
 }
-
+//Расчет полного аннуитетного платежа
 long double total_payment_annuity(long double monthly_payment_ann,
                                   double term) {
   return monthly_payment_ann * term;
