@@ -1,5 +1,6 @@
 #include "smart_calc.h"
 
+//HandleBinaryOperationMOD
 void mod_to_percent(char *str, const char *old_substring,
                     const char *new_substring) {
   char *position = str;
@@ -14,6 +15,7 @@ void mod_to_percent(char *str, const char *old_substring,
   }
 }
 
+//APIForExpressionWithX
 int calculate_str_api_with_x(const char *str, long double x, long double *res) {
   if (str == NULL || res == NULL) {
     return 1;
@@ -41,6 +43,7 @@ int calculate_str_api_with_x(const char *str, long double x, long double *res) {
   return is_error;
 }
 
+//APIForExpressionWithoutX
 int calculate_str_api(const char *str, long double *res) {
   if (str == NULL || res == NULL) {
     return 1;

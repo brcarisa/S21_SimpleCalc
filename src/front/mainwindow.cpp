@@ -61,6 +61,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow() { delete ui; }
 
+//ConnectionsForButtons
 void MainWindow::bind_slots() {
   connect(ui->pushButton_0, SIGNAL(clicked()), this, SLOT(digit_nums()));
   connect(ui->pushButton_1, SIGNAL(clicked()), this, SLOT(digit_nums()));
@@ -93,6 +94,8 @@ void MainWindow::bind_slots() {
   connect(ui->pushButton_sqrt, SIGNAL(clicked()), this, SLOT(digit_nums()));
 }
 
+
+//MethodForDrawGraph
 void MainWindow::plot_graph() {
   if (ui->min_range_x->text().isEmpty() || ui->min_range_y->text().isEmpty() ||
       ui->max_range_x->text().isEmpty() || ui->max_range_y->text().isEmpty() ||
@@ -148,6 +151,8 @@ void MainWindow::digit_nums() {
   }
 }
 
+
+//ExeceptionForOtherButtons
 void MainWindow::on_pushButton_mul_clicked() {
   ui->show_result->setText(ui->show_result->text() + "*");
 }
