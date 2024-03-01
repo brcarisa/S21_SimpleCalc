@@ -84,7 +84,7 @@ bool end_of_line_processing(stack_operands_t *op_stack, char *buff) {
   if (op_stack == NULL || buff == NULL) {
     return false;
   }
-  bool result = true;
+  bool res = true;
   bool we_have_unclosed_brcacket = false;
   while (peek(op_stack) != NULL && !we_have_unclosed_brcacket) {
     if (*(peek(op_stack)) == '(') {
@@ -95,9 +95,9 @@ bool end_of_line_processing(stack_operands_t *op_stack, char *buff) {
     }
   }
   if (we_have_unclosed_brcacket) {
-    result = false;
+      res = false;
   }
-  return result;
+  return res;
 }
 
 bool logic_of_algorithm_dijkstra(stack_operands_t *op_stack, char *buff,

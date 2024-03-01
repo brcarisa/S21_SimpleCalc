@@ -43,13 +43,13 @@ void unary_plus_or_minus_pars(char *str) {
   } else if (*str == '-') {
     *str = '~';
   }
-  char previous_lex[MAX_LEN + 1] = {'\0'};
-  memset(previous_lex, '\0', MAX_LEN + 1);
+  char previous_lexeme[MAX_LEN + 1] = {'\0'};
+  memset(previous_lexeme, '\0', MAX_LEN + 1);
   int curr_word = 0;
   for (char *ptr = str; *ptr != '\0'; ptr++) {
     if (curr_word) {
       if (*ptr == '+' || *ptr == '-') {
-        if (strchr(previous_lex, '(')) {
+        if (strchr(previous_lexeme, '(')) {
           if (*ptr == '+')
             *ptr = 'p';
           else if (*ptr == '-')
@@ -58,7 +58,7 @@ void unary_plus_or_minus_pars(char *str) {
       }
     }
     for (char *cpylex = ptr; *cpylex != ' '; cpylex++) {
-      strncpy(previous_lex, cpylex, 1);
+      strncpy(previous_lexeme, cpylex, 1);
     }
     while (*ptr != ' ') {
       ptr++;
